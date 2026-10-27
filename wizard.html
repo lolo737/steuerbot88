@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>STEUERBOT/88 — Interview</title>
+  <meta name="description" content="STEUERBOT/88 interview wizard (prototype). Everything stays in your browser.">
+  <link rel="stylesheet" href="css/terminal.css">
+</head>
+<body>
+<a class="skip" href="#wizard">Skip to wizard</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="index.html">STEUERBOT/88<small>v1.0.0 — Tax Recovery System</small></a>
+    <div class="lang" role="group" aria-label="Language / Sprache">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="de" aria-pressed="false">DE</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap crt">
+  <div class="disclaimer" role="note">
+    <strong>PROTOTYPE &mdash; NOT TAX ADVICE / KEINE STEUERBERATUNG.</strong>
+    Not affiliated with any German tax authority or ELSTER. Nothing is submitted or sent anywhere: your answers stay in
+    this browser. Figures marked <span class="verify">verify</span> are unconfirmed configuration values.
+  </div>
+
+  <ol class="steps" id="steps" aria-label="Progress"></ol>
+
+  <form id="wizard" novalidate aria-live="polite">
+    <noscript><p>The wizard needs JavaScript. Serve the folder over http (see README) and reload.</p></noscript>
+  </form>
+
+  <div class="wiz-nav">
+    <button type="button" class="btn ghost" id="back">Back</button>
+    <span class="status" id="status" role="status"></span>
+    <button type="button" class="btn" id="next">Next</button>
+  </div>
+  <p><button type="button" class="btn ghost small" id="reset">Wipe local data</button></p>
+</main>
+
+<footer>
+  <div class="wrap">STEUERBOT/88 &middot; prototype by Niall O'Hara &middot; MIT licence &middot; <a href="index.html">Home</a></div>
+</footer>
+
+<script type="module" src="js/wizard.js"></script>
+</body>
+</html>

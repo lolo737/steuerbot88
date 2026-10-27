@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>STEUERBOT/88 — Tax Recovery System</title>
+  <meta name="description" content="Prototype: a self-service helper for people who have left Germany to prepare prior-year German income tax returns. Not tax advice.">
+  <link rel="stylesheet" href="css/terminal.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="index.html">STEUERBOT/88<small>v1.0.0 — Tax Recovery System</small></a>
+    <nav aria-label="Main">
+      <a href="#flow">Flow</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#ledger">Ledger of Doubt</a>
+      <a href="#privacy">Privacy</a>
+      <a href="wizard.html">Launch wizard</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap crt">
+  <section class="hero">
+    <pre class="boot" aria-hidden="true">READY.
+LOAD "STEUERBOT",8,1
+SEARCHING FOR STEUERBOT
+LOADING
+RUN</pre>
+    <h1 class="cursor">STEUERBOT/88</h1>
+    <p class="lede">Left Germany? Worked there in the last few years? You may have paid more income tax than you owed.
+      STEUERBOT/88 walks you through gathering your documents and organising your figures so you can file a prior-year
+      <span lang="de">Einkommensteuererklärung</span> yourself.</p>
+    <p><a class="btn" href="wizard.html">Start the interview &rarr;</a>
+       <a class="btn ghost" href="#flow">How it works</a></p>
+
+    <div class="disclaimer" role="note">
+      <strong>PROTOTYPE &mdash; NOT TAX ADVICE.</strong>
+      STEUERBOT/88 is a portfolio demo. It is not affiliated with the Bundeszentralamt f&uuml;r Steuern, ELSTER or any
+      German tax authority. It never submits anything: you review, sign and submit your own return. Every rate and
+      threshold it uses is an <em>unverified</em> configuration value &mdash; check them before relying on any number.
+    </div>
+  </section>
+
+  <section aria-labelledby="who">
+    <h2 id="who">&gt; WHO IS THIS FOR</h2>
+    <div class="grid grid-3">
+      <div class="box"><div class="box-title">Departed</div>Employees who worked in Germany, have since moved abroad, and never filed a return for those years.</div>
+      <div class="box"><div class="box-title">Paperwork-averse</div>People who would rather be told exactly which documents to fetch than read the Einkommensteuergesetz.</div>
+      <div class="box"><div class="box-title">Self-filers</div>Anyone happy to type the final figures into ELSTER themselves once they are laid out clearly.</div>
+    </div>
+  </section>
+
+  <section id="flow" aria-labelledby="flow-h">
+    <h2 id="flow-h">&gt; THE FLOW</h2>
+    <ol class="flow">
+      <li><b>Go Get These</b><i>Unterlagen besorgen</i><br>A checklist of documents to find before you begin.</li>
+      <li><b>Personal Details</b><i>Pers&ouml;nliche Angaben</i><br>Name, Steuer-ID (checksum-validated), addresses, refund IBAN (checksum-validated).</li>
+      <li><b>Tax Years + Documents</b><i>Steuerjahre + Unterlagen</i><br>Choose your years and enter each Lohnsteuerbescheinigung.</li>
+      <li><b>Commute Details</b><i>Entfernungspauschale</i><br>Distance and days, priced per km from the per-year config.</li>
+      <li><b>Work Expenses</b><i>Werbungskosten</i><br>Home office, equipment, phone/internet, courses, applications.</li>
+      <li><b>Review</b><i>&Uuml;berpr&uuml;fung</i><br>Per-year estimate against the lump sum; export JSON or a printable summary.</li>
+    </ol>
+  </section>
+
+  <section id="pricing" aria-labelledby="pricing-h">
+    <h2 id="pricing-h">&gt; PRICING <span class="badge">planned</span></h2>
+    <p>One-time purchase. No subscription. <strong>Payments are not wired up: coming soon.</strong> The demo is free to try.</p>
+    <div class="grid grid-2">
+      <div class="box">
+        <div class="box-title">Last 2 Years / Letzte 2 Jahre</div>
+        <div class="price">&euro;19.99</div>
+        <p>Two prior tax years, one payment.</p>
+        <button class="btn" disabled aria-disabled="true">Coming soon</button>
+      </div>
+      <div class="box">
+        <div class="box-title">Last 4 Years / Letzte 4 Jahre</div>
+        <div class="price">&euro;29.99</div>
+        <p>Up to four prior tax years, one payment. Depends on the filing window, which is <em>unverified</em>.</p>
+        <button class="btn" disabled aria-disabled="true">Coming soon</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="ledger" aria-labelledby="ledger-h">
+    <h2 id="ledger-h">&gt; THE LEDGER OF DOUBT</h2>
+    <p>Every figure below lives in <code>js/config.js</code> with a <code>verify: true</code> flag. None has been confirmed by a tax professional.
+      This table is generated live from that file.</p>
+    <div class="table-scroll">
+      <table class="ledger" id="ledger-table">
+        <thead><tr><th scope="col">Scope</th><th scope="col">Key</th><th scope="col">Value</th><th scope="col">Note</th></tr></thead>
+        <tbody><tr><td colspan="4">Enable JavaScript (and serve the site over http, see README) to see the live table.</td></tr></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="privacy" aria-labelledby="privacy-h">
+    <h2 id="privacy-h">&gt; PRIVACY</h2>
+    <p>There is no server component. Your answers are kept in your own browser's <code>localStorage</code> and nowhere else.
+      The pages load no third-party scripts, fonts or trackers. Exports are generated in the browser and downloaded to your device.
+      The wizard has a button to wipe everything.</p>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    STEUERBOT/88 &middot; a concept and prototype by Niall O'Hara &middot; MIT licence &middot;
+    Not tax advice. Not affiliated with any German tax authority.
+  </div>
+</footer>
+
+<script type="module">
+  import { ledgerOfDoubt } from './js/config.js';
+  const fmt = (v) => typeof v === 'object' ? (Array.isArray(v) ? `${v.length} countries` : Object.entries(v).map(([k, x]) => `${k}: ${x}`).join(', ')) : String(v);
+  const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' })[c]);
+  document.querySelector('#ledger-table tbody').innerHTML = ledgerOfDoubt()
+    .map((r) => `<tr><td>${esc(r.scope)}</td><td><code>${esc(r.key)}</code></td><td>${esc(fmt(r.value))}</td><td>${esc(r.note)} <span class="verify">verify</span></td></tr>`)
+    .join('');
+</script>
+</body>
+</html>

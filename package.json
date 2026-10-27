@@ -1,0 +1,16 @@
+{
+  "name": "steuerbot88",
+  "version": "1.0.0",
+  "description": "STEUERBOT/88 v1.0.0 — Tax Recovery System. Prototype self-service helper for preparing prior-year German income tax returns after leaving Germany. Not tax advice.",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "author": "Niall O'Hara",
+  "scripts": {
+    "start": "node scripts/serve.js",
+    "test": "node --test test/*.test.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
