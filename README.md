@@ -7,6 +7,8 @@
 
 ![The STEUERBOT/88 landing page: amber phosphor text on black, a C64-style boot sequence and the prototype disclaimer](docs/screenshot-landing.png)
 
+> 🟢 **Also in this repo:** [`mvp/`](mvp/) holds the original green-phosphor version designed in Figma Make, with PDF parsing and a real Stripe checkout, now runnable on its own.
+
 ---
 
 ## Overture: a lament for the lost euro
